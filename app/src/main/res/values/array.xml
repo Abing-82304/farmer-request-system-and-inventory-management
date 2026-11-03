@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="units">
+        <item>Select unit</item>
+        <item>kg</item>
+        <item>g</item>
+        <item>L</item>
+        <item>mL</item>
+        <item>pcs</item>
+        <item>sack</item>
+        <item>box</item>
+    </string-array>
+</resources>

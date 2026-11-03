@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 1. Light edge (shows at bottom-right) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/search_shadow_light" />
+            <corners android:radius="14dp" />
+        </shape>
+    </item>
+
+    <!-- 2. Dark edge (shows at top-left) -->
+    <item android:right="2dp" android:bottom="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/search_shadow_dark" />
+            <corners android:radius="14dp" />
+        </shape>
+    </item>
+
+    <!-- 3. Field fill, pulled in from all sides -->
+    <item
+        android:left="2dp"
+        android:top="2dp"
+        android:right="2dp"
+        android:bottom="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/search_fill" />
+            <corners android:radius="12dp" />
+        </shape>
+    </item>
+</layer-list>

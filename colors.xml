@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand palette -->
+    <color name="green_900">#1B2E21</color>
+    <color name="green_800">#26402F</color>
+    <color name="green_700">#33513D</color>
+    <color name="parchment">#F6F1E4</color>
+    <color name="parchment_dim">#EFE8D6</color>
+    <color name="soil">#6B4A32</color>
+    <color name="amber">#D9A441</color>
+    <color name="amber_dim">#C4903A</color>
+    <color name="ink">#1A211B</color>
+    <color name="ink_soft">#4B5850</color>
+    <color name="line">#DED4BC</color>
+    <color name="card_bg">#FFFDF8</color>
+    <color name="danger">#A5432B</color>
+    <color name="danger_bg">#F7E7E2</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+</resources>

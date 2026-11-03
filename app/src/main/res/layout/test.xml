@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="#d3d3d3">
+
+    <TableLayout
+        android:id="@+id/table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="*"
+        android:stretchColumns="*">
+
+        <!-- Title row -->
+        <TableRow
+            android:id="@+id/tableRow_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:background="#16a085">
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_span="4"
+                android:gravity="center"
+                android:text="Data Base"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
+        </TableRow>
+
+        <!-- Header row -->
+        <TableRow
+            android:id="@+id/tableRow_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1abc9c"
+            android:padding="5dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/TextView_serial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="SNo"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/TextView_item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Item Name"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
+            <TextView
+                android:id="@+id/TextView_quantity_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Quantity (Kg)"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
+            <TextView
+                android:id="@+id/TextView_availability"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Available"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:typeface="serif" />
+        </TableRow>
+
+        <!-- Data rows -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:gravity="center"
+            android:background="#bdc3c7">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="1" android:textColor="#000000" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="Apple" android:textColor="#000000" android:typeface="serif" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="10 kg" android:textColor="#000000" android:typeface="serif" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="Yes" android:textColor="#000000" android:typeface="serif" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:gravity="center"
+            android:background="#ffffff">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="2" android:textColor="#000000" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="Orange" android:textColor="#000000" android:typeface="serif" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="20 kg" android:textColor="#000000" android:typeface="serif" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="Yes" android:textColor="#000000" android:typeface="serif" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:gravity="center"
+            android:background="#bdc3c7">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="3" android:textColor="#000000" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="Banana" android:textColor="#000000" android:typeface="serif" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="40 kg" android:textColor="#000000" android:typeface="serif" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="Yes" android:textColor="#000000" android:typeface="serif" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:gravity="center"
+            android:background="#ffffff">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="4" android:textColor="#000000" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="Apricot" android:textColor="#000000" android:typeface="serif" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="20 kg" android:textColor="#000000" android:typeface="serif" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="No" android:textColor="#000000" android:typeface="serif" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:gravity="center"
+            android:background="#bdc3c7">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="5" android:textColor="#000000" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="Blueberry" android:textColor="#000000" android:typeface="serif" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="60 kg" android:textColor="#000000" android:typeface="serif" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="Yes" android:textColor="#000000" android:typeface="serif" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:gravity="center"
+            android:background="#ffffff">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="6" android:textColor="#000000" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="Guava" android:textColor="#000000" android:typeface="serif" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="40 kg" android:textColor="#000000" android:typeface="serif" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="Yes" android:textColor="#000000" android:typeface="serif" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:gravity="center"
+            android:background="#bdc3c7">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="7" android:textColor="#000000" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="Mango" android:textColor="#000000" android:typeface="serif" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="50 kg" android:textColor="#000000" android:typeface="serif" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="No" android:textColor="#000000" android:typeface="serif" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:gravity="center"
+            android:background="#ffffff">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="8" android:textColor="#000000" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="Papaya" android:textColor="#000000" android:typeface="serif" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="20 kg" android:textColor="#000000" android:typeface="serif" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="Yes" android:textColor="#000000" android:typeface="serif" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:gravity="center"
+            android:background="#bdc3c7">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="9" android:textColor="#000000" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="Watermelon" android:textColor="#000000" android:typeface="serif" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="10 kg" android:textColor="#000000" android:typeface="serif" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="No" android:textColor="#000000" android:typeface="serif" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:gravity="center"
+            android:background="#ffffff">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="10" android:textColor="#000000" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="Orange" android:textColor="#000000" android:typeface="serif" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="20 kg" android:textColor="#000000" android:typeface="serif" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="Yes" android:textColor="#000000" android:typeface="serif" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:gravity="center"
+            android:background="#bdc3c7">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="11" android:textColor="#000000" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="Fig" android:textColor="#000000" android:typeface="serif" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="60 kg" android:textColor="#000000" android:typeface="serif" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="Yes" android:textColor="#000000" android:typeface="serif" />
+        </TableRow>
+
+    </TableLayout>
+
+</RelativeLayout>
