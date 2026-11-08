@@ -59,6 +59,15 @@
             android:textSize="13sp"
             android:textStyle="italic" />
 
+        <TextView
+            android:id="@+id/textDateTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="#9CA3AF"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
         <!-- Remarks View Area (Only shows if item is processed) -->
         <TextView
             android:id="@+id/textRemarksDisplay"

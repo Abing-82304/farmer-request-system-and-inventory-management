@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -39,15 +38,15 @@
                 android:layout_height="wrap_content"
                 android:text="PENDING"
                 android:textColor="#F59E0B"
-                android:textStyle="bold"
-                android:textSize="13sp"/>
+                android:textSize="13sp"
+                android:textStyle="bold"/>
         </LinearLayout>
 
         <TextView
             android:id="@+id/textRequestDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="8dp"
             android:textColor="#4B5563"
             android:textSize="14sp"/>
 
@@ -55,9 +54,18 @@
             android:id="@+id/textPurpose"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="5dp"
             android:textColor="#6B7280"
             android:textSize="13sp"/>
+
+        <TextView
+            android:id="@+id/textDateTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="#9CA3AF"
+            android:textSize="12sp"
+            android:visibility="gone"/>
 
         <TextView
             android:id="@+id/textRemarksDisplay"
@@ -66,15 +74,6 @@
             android:layout_marginTop="8dp"
             android:textColor="#374151"
             android:textSize="13sp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:id="@+id/textReviewedDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:textColor="#9CA3AF"
-            android:textSize="12sp"
             android:visibility="gone"/>
 
     </LinearLayout>

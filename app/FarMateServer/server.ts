@@ -23,6 +23,8 @@ console.log("Deno server running on http://localhost:8000");
 Deno.serve({ hostname: "0.0.0.0", port: 8000 }, async (req) => {
     const url = new URL(req.url);
 
+console.log("REQUEST:", req.method, url.pathname);
+
     // Test server
     if (req.method === "GET" && url.pathname === "/") {
         return new Response("FarMate Server is running!");
@@ -146,8 +148,9 @@ if (req.method === "GET" && url.pathname === "/api/admin/requests") {
       // ==========================================
     // NEW ADMIN ROUTE 2: UPDATE REQUEST STATUS (PATCH)
     // ==========================================
-    const statusMatch = url.pathname.match(/^\/api\/admin\/requests\/(\d+)\/status$/);
-    if (req.method === "PATCH" && statusMatch) {
+const statusMatch = url.pathname.match(
+    /^\/api\/admin\/requests\/(\d+)\/status$/
+);    if (req.method === "PATCH" && statusMatch) {
         try {
            
             const requestId = parseInt(statusMatch[1]); 
@@ -211,8 +214,53 @@ if (
         }
     }
 
+// ==========================================
+// EMPLOYEE: GET OWN RESOURCE REQUESTS
+// ==========================================
+if (req.method === "GET" && url.pathname === "/api/employee/requests") {
+    try {
+        const employeeId = Number(url.searchParams.get("employee_id"));
+
+        if (!Number.isInteger(employeeId) || employeeId <= 0) {
+            return json({
+                success: false,
+                message: "Valid employee ID is required"
+            }, 400);
+        }
+
+        const result = await client.queryObject(`
+            SELECT
+                id,
+                employee_id,
+                item_name,
+                quantity,
+                unit,
+                farm_area,
+                purpose,
+                status,
+                admin_remarks
+            FROM public.resource_requests
+            WHERE employee_id = $1
+            ORDER BY id DESC
+        `, [employeeId]);
+
+        return json(result.rows);
+
+    } catch (error) {
+        console.error("Employee request query failed:", error);
+
+        return json({
+            success: false,
+            message: "Error retrieving employee requests"
+        }, 500);
+    }
+}
+
 
 
     // Unknown endpoint
     return json({ success: false, message: "Endpoint not found" }, 404);
 });
+
+
+

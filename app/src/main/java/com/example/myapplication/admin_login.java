@@ -80,7 +80,7 @@ public class admin_login extends AppCompatActivity {
 
         Retrofit retrofit = new Retrofit.Builder()
 //                .baseUrl("http://192.168.254.102:8000/")
-                .baseUrl("http://192.168.254.100:8000/")
+                .baseUrl( "http://100.72.152.12:8000/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

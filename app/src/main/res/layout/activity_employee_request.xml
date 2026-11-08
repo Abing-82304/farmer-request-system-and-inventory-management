@@ -41,378 +41,24 @@
 
     </com.google.android.material.appbar.MaterialToolbar>
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1"
         android:fillViewport="true"
-        android:clipToPadding="false"
-        android:paddingBottom="24dp">
-    <LinearLayout
+        android:clipToPadding="false">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="34dp"
             android:orientation="vertical"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:paddingTop="16dp"
             android:paddingBottom="24dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Choose your Request Item👋"
-        android:textColor="#1F2937"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:layout_marginTop="24dp"/>
 
 
-        <!-- EMPLOYEES -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="34dp"
-            android:orientation="horizontal">
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card01"
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_marginEnd="8dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            app:cardBackgroundColor="@android:color/white"
-            app:cardCornerRadius="14dp"
-            app:cardElevation="3dp"
-            app:strokeColor="#E5E7EB"
-            app:strokeWidth="1dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="12dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="🧪"
-                    android:textSize="30sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="Fertilizers"
-                    android:textColor="#374151"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/fertilizersCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
-                    android:text="12"
-                    android:textColor="#1A8A29"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-
-
-
-        <!-- INVENTORY -->
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card02"
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="8dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            app:cardBackgroundColor="@android:color/white"
-            app:cardCornerRadius="14dp"
-            app:cardElevation="3dp"
-            app:strokeColor="#E5E7EB"
-            app:strokeWidth="1dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="12dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="🌱"
-                    android:textSize="30sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="Seeds"
-                    android:textColor="#374151"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/SeedsCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
-                    android:text="35"
-                    android:textColor="#1A8A29"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-    </LinearLayout>
-
-
-    <!-- SECOND ROW -->
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal">
-
-        <!-- REQUESTS -->
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card03"
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_marginEnd="8dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            app:cardBackgroundColor="@android:color/white"
-            app:cardCornerRadius="14dp"
-            app:cardElevation="3dp"
-            app:strokeColor="#E5E7EB"
-            app:strokeWidth="1dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="12dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="🌿"
-                    android:textSize="30sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="Herbicides"
-                    android:textColor="#374151"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/HerbicidsCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
-                    android:text="8"
-                    android:textColor="#F59E0B"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-
-        <!-- ACTIVITIES -->
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card04"
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="8dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            app:cardBackgroundColor="@android:color/white"
-            app:cardCornerRadius="14dp"
-            app:cardElevation="3dp"
-            app:strokeColor="#E5E7EB"
-            app:strokeWidth="1dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="12dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="🐛"
-                    android:textSize="30sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:textAlignment="center"
-                    android:text="Insecticides / Pesticides"
-                    android:textColor="#374151"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/InsectdCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
-                    android:text="15"
-                    android:textColor="#1A8A29"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:orientation="horizontal">
-
-        <!-- EMPLOYEES -->
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card05"
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_marginEnd="8dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            app:cardBackgroundColor="@android:color/white"
-            app:cardCornerRadius="14dp"
-            app:cardElevation="3dp"
-            app:strokeColor="#E5E7EB"
-            app:strokeWidth="1dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="12dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="🛠️"
-                    android:textSize="30sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="Farm Tools"
-                    android:textColor="#374151"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/toolsCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
-                    android:text="12"
-                    android:textColor="#1A8A29"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-
-        <!-- INVENTORY -->
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card06"
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="8dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            app:cardBackgroundColor="@android:color/white"
-            app:cardCornerRadius="14dp"
-            app:cardElevation="3dp"
-            app:strokeColor="#E5E7EB"
-            app:strokeWidth="1dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="12dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="🚜"
-                    android:textSize="30sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="Farm Equipment"
-                    android:textColor="#374151"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/EquipmntCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
-                    android:text="35"
-                    android:textColor="#1A8A29"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-    </LinearLayout>
-
-
-    <!-- SECOND ROW -->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -446,14 +92,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="🦺"
+                    android:text="✅"
                     android:textSize="30sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
-                    android:text="Personal Protective Equipment (PPE)"
+                    android:text="Approved"
                     android:textColor="#374151"
                     android:textSize="15sp"
                     android:textStyle="bold"
@@ -500,14 +146,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="💧"
+                    android:text="❌"
                     android:textSize="30sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
-                    android:text="Irrigation Supplies"
+                    android:text="Decline"
                     android:textColor="#374151"
                     android:textSize="15sp"
                     android:textStyle="bold" />
@@ -525,6 +171,8 @@
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
+
+
 
 
 
@@ -562,14 +210,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="🐄"
+                    android:text="⏳"
                     android:textSize="30sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
-                    android:text="Animal / Livestock Supplies"
+                    android:text="Pending"
                     android:textColor="#374151"
                     android:textSize="15sp"
                     android:textStyle="bold"
@@ -616,7 +264,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="📦"
+                    android:text="📋"
                     android:textSize="30sp" />
 
                 <TextView
@@ -624,7 +272,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:textAlignment="center"
-                    android:text="Other Farm Supplies"
+                    android:text="Total Request"
                     android:textColor="#374151"
                     android:textSize="15sp"
                     android:textStyle="bold" />
@@ -643,11 +291,54 @@
 
         </com.google.android.material.card.MaterialCardView>
 
-    </LinearLayout>
-    </LinearLayout>
 
 
-    </ScrollView>
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Recent Request"
+                android:textColor="#1F2937"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/add_request"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#57de7b"
+            android:text="+ Add"
+            android:textColor="#1F2937"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerEmployeeRequests"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:nestedScrollingEnabled="false"
+            android:clipToPadding="false"
+            android:paddingBottom="16dp"
+            tools:listitem="@layout/item_employee_request"/>
+
+
+    </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>
 

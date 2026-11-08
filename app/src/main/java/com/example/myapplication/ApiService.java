@@ -15,14 +15,17 @@ public interface ApiService {
     @GET("api/stock")
     Call<List<Item>> getItems();
     @GET("api/admin/requests")
-    Call<List<ItemRequest>> getAllEmployeeRequests();
+    Call<List<ItemRequest1>> getAllEmployeeRequests();
 
     // Update status to 'approved' or 'declined'
     @PATCH("api/admin/requests/{id}/status")
-    Call<ItemRequest> updateRequestStatus(
+    Call<ItemRequest1> updateRequestStatus(
             @Path("id") int requestId,
             @Body StatusUpdateRequest body
     );
+    // EMPLOYEE: Get only the logged-in employee's requests
+    @GET("api/employee/my-requests")
+    Call<List<ItemRequest1>> getMyRequests();
 
 
     }
