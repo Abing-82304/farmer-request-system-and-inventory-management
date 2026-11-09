@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,16 +15,16 @@ import java.util.List;
 
 public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestViewHolder> {
 
-    private List<ItemRequest> requestList;
+    private List<ItemRequest1> requestList;
     private OnRequestActionListener actionListener;
 
     // Interface to communicate clicks back to your Activity class
     public interface OnRequestActionListener {
-        void onApprove(ItemRequest request);
-        void onDecline(ItemRequest request, String remarks);
+        void onApprove(ItemRequest1 request);
+        void onDecline(ItemRequest1 request, String remarks);
     }
 
-    public RequestAdapter(List<ItemRequest> requestList, OnRequestActionListener actionListener) {
+    public RequestAdapter(List<ItemRequest1> requestList, OnRequestActionListener actionListener) {
         this.requestList = requestList;
         this.actionListener = actionListener;
     }
@@ -37,7 +38,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestV
 
     @Override
     public void onBindViewHolder(@NonNull RequestViewHolder holder, int position) {
-        ItemRequest request = requestList.get(position);
+        ItemRequest1 request = requestList.get(position);
 
         // 1. Assign names, units, and quantities cleanly
         holder.textItemName.setText(request.item_name);
@@ -51,9 +52,19 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestV
 
         holder.textPurpose.setText("Purpose: " + (request.purpose != null ? request.purpose : "N/A"));
 
+        String formattedDate = request.getFormattedDateTime();
+        if (holder.textDateTime != null) {
+            if (formattedDate != null && !formattedDate.trim().isEmpty()) {
+                holder.textDateTime.setText("📅 " + formattedDate);
+                holder.textDateTime.setVisibility(View.VISIBLE);
+            } else {
+                holder.textDateTime.setVisibility(View.GONE);
+            }
+        }
+
         // 2. Control visibility based on the request state status
         if ("PENDING".equalsIgnoreCase(request.status) || request.status == null) {
-            holder.textStatusLabel.setTextColor(android.graphics.Color.parseColor("#F59E0B")); // Amber Orange
+            holder.textStatusLabel.setTextColor(Color.parseColor("#F59E0B")); // Amber Orange
             holder.layoutActionControls.setVisibility(View.VISIBLE);
             holder.textRemarksDisplay.setVisibility(View.GONE);
             holder.inputRemarks.setText(""); // Reset input text box
@@ -63,14 +74,14 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestV
             holder.textRemarksDisplay.setVisibility(View.VISIBLE);
 
             if ("APPROVED".equalsIgnoreCase(request.status)) {
-                holder.textStatusLabel.setTextColor(android.graphics.Color.parseColor("#1A8A29")); // Forest Green
+                holder.textStatusLabel.setTextColor(Color.parseColor("#1A8A29")); // Forest Green
                 holder.textRemarksDisplay.setText("Approved ✅");
-                holder.textRemarksDisplay.setTextColor(android.graphics.Color.parseColor("#1A8A29"));
+                holder.textRemarksDisplay.setTextColor(Color.parseColor("#1A8A29"));
             } else {
-                holder.textStatusLabel.setTextColor(android.graphics.Color.parseColor("#DC2626")); // Crimson Red
+                holder.textStatusLabel.setTextColor(Color.parseColor("#DC2626")); // Crimson Red
                 String remarksStr = request.admin_remarks != null ? request.admin_remarks : "No reasons provided.";
                 holder.textRemarksDisplay.setText("Declined Reason: " + remarksStr);
-                holder.textRemarksDisplay.setTextColor(android.graphics.Color.parseColor("#DC2626"));
+                holder.textRemarksDisplay.setTextColor(Color.parseColor("#DC2626"));
             }
         }
 
@@ -94,13 +105,13 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestV
         return requestList != null ? requestList.size() : 0;
     }
 
-    public void updateData(List<ItemRequest> newList) {
+    public void updateData(List<ItemRequest1> newList) {
         this.requestList = newList;
         notifyDataSetChanged();
     }
 
     static class RequestViewHolder extends RecyclerView.ViewHolder {
-        TextView textItemName, textStatusLabel, textRequestDetails, textPurpose, textRemarksDisplay;
+        TextView textItemName, textStatusLabel, textRequestDetails, textPurpose, textDateTime, textRemarksDisplay;
         EditText inputRemarks;
         Button btnApproveAction, btnDeclineAction;
         LinearLayout layoutActionControls;
@@ -111,6 +122,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestV
             textStatusLabel = itemView.findViewById(R.id.textStatusLabel);
             textRequestDetails = itemView.findViewById(R.id.textRequestDetails);
             textPurpose = itemView.findViewById(R.id.textPurpose);
+            textDateTime = itemView.findViewById(R.id.textDateTime);
             textRemarksDisplay = itemView.findViewById(R.id.textRemarksDisplay);
             inputRemarks = itemView.findViewById(R.id.inputRemarks);
             btnApproveAction = itemView.findViewById(R.id.btnApproveAction);

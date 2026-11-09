@@ -25,7 +25,7 @@ public class employee_dashboard extends AppCompatActivity {
 
 
         cardResourceRequest.setOnClickListener(v ->{
-            Intent intent = new Intent(employee_dashboard.this, request_form.class);
+            Intent intent = new Intent(employee_dashboard.this, Employee_Request.class);
             startActivity(intent);
         });
 

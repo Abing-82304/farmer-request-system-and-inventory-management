@@ -47,7 +47,7 @@ public class RequestActivity extends AppCompatActivity implements RequestAdapter
         // 3. Initialize Retrofit.
         // Tip: 10.0.2.2 maps directly to your computer's local Deno network pipeline inside the Android Emulator.
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.254.100:8000/")
+                .baseUrl( "http://100.72.152.12:8000/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -58,11 +58,11 @@ public class RequestActivity extends AppCompatActivity implements RequestAdapter
     }
 
     private void loadRequestsFromServer() {
-        apiService.getAllEmployeeRequests().enqueue(new Callback<List<ItemRequest>>() {
+        apiService.getAllEmployeeRequests().enqueue(new Callback<List<ItemRequest1>>() {
             @Override
-            public void onResponse(Call<List<ItemRequest>> call, Response<List<ItemRequest>> response) {
+            public void onResponse(Call<List<ItemRequest1>> call, Response<List<ItemRequest1>> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    List<ItemRequest> requestsList = response.body();
+                    List<ItemRequest1> requestsList = response.body();
 
                     // Run safely back inside the main Android display pipeline
                     runOnUiThread(() -> {
@@ -78,18 +78,18 @@ public class RequestActivity extends AppCompatActivity implements RequestAdapter
             }
 
             @Override
-            public void onFailure(Call<List<ItemRequest>> call, Throwable t) {
+            public void onFailure(Call<List<ItemRequest1>> call, Throwable t) {
                 Toast.makeText(RequestActivity.this, "Failed to connect to backend server.", Toast.LENGTH_LONG).show();
             }
         });
     }
 
-    private void calculateDashboardMetrics(List<ItemRequest> requests) {
+    private void calculateDashboardMetrics(List<ItemRequest1> requests) {
         int total = requests.size();
         int approvedCount = 0;
 
         // Loop through everything to locate matches
-        for (ItemRequest req : requests) {
+        for (ItemRequest1 req : requests) {
             if ("APPROVED".equalsIgnoreCase(req.status)) {
                 approvedCount++;
             }
@@ -102,22 +102,22 @@ public class RequestActivity extends AppCompatActivity implements RequestAdapter
 
     // TRIGGERED ON CARD CLICK: Admin presses green "Approve" button
     @Override
-    public void onApprove(ItemRequest request) {
+    public void onApprove(ItemRequest1 request) {
         executeStatusChangeOnServer(request.id, "APPROVED", null);
     }
 
     // TRIGGERED ON CARD CLICK: Admin presses red "Decline" button with text box comments
     @Override
-    public void onDecline(ItemRequest request, String remarks) {
+    public void onDecline(ItemRequest1 request, String remarks) {
         executeStatusChangeOnServer(request.id, "DECLINED", remarks);
     }
 
     private void executeStatusChangeOnServer(int requestId, String status, String remarks) {
         StatusUpdateRequest payload = new StatusUpdateRequest(status, remarks);
 
-        apiService.updateRequestStatus(requestId, payload).enqueue(new Callback<ItemRequest>() {
+        apiService.updateRequestStatus(requestId, payload).enqueue(new Callback<ItemRequest1>() {
             @Override
-            public void onResponse(Call<ItemRequest> call, Response<ItemRequest> response) {
+            public void onResponse(Call<ItemRequest1> call, Response<ItemRequest1> response) {
                 if (response.isSuccessful()) {
                     Toast.makeText(RequestActivity.this, "Request marked as " + status + " successfully!", Toast.LENGTH_SHORT).show();
 
@@ -129,7 +129,7 @@ public class RequestActivity extends AppCompatActivity implements RequestAdapter
             }
 
             @Override
-            public void onFailure(Call<ItemRequest> call, Throwable t) {
+            public void onFailure(Call<ItemRequest1> call, Throwable t) {
                 Toast.makeText(RequestActivity.this, "Network connection loss encountered.", Toast.LENGTH_SHORT).show();
             }
         });

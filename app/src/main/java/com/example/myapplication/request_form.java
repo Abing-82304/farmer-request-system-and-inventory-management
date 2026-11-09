@@ -14,11 +14,14 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class request_form extends AppCompatActivity {
 
     // NO trailing slash here
-    private static final String BASE_URL = "http://192.168.254.100:8000";
+    private static final String BASE_URL = "http://100.72.152.12:8000";
 
     private EditText etItemName, etQuantity, etFarmArea, etPurpose;
     private Spinner spinnerUnit;
@@ -88,6 +91,8 @@ public class request_form extends AppCompatActivity {
         // Network calls must NOT run on the main thread
         new Thread(() -> {
             try {
+                String currentDateTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(new Date());
+
                 JSONObject json = new JSONObject();
                 json.put("item_name", name);
                 json.put("quantity", qty);
@@ -95,6 +100,8 @@ public class request_form extends AppCompatActivity {
                 json.put("farm_area", farmArea);
                 json.put("purpose", purpose);
                 json.put("employee_id", employeeId);
+                json.put("created_at", currentDateTime);
+                json.put("date_time", currentDateTime);
 
                 URL url = new URL(BASE_URL + "/api/request");
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
