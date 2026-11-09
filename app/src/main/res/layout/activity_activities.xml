@@ -2,12 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Employees"
-    android:background="#F5F7F5">
+    android:background="#F5F7F5"
+    tools:context=".activities">
 
+    <!-- TOOLBAR -->
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -15,7 +17,6 @@
         android:background="#1A8A29"
         app:titleTextColor="@android:color/white">
 
-        <!-- Menu Button -->
         <ImageButton
             android:id="@+id/menuButton"
             android:layout_width="48dp"
@@ -27,13 +28,12 @@
             android:src="@drawable/outline_arrow_left_alt_24"
             app:tint="@android:color/white" />
 
-        <!-- Toolbar Title -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="8dp"
-            android:text="Reports"
+            android:text="Reports &amp; Alerts"
             android:textColor="@android:color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -52,36 +52,35 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <!-- ========================= -->
-            <!-- WELCOME -->
-            <!-- ========================= -->
-
+            <!-- HEADER TITLE -->
             <TextView
                 android:id="@+id/welcomeAdmin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Employee Reports"
+                android:text="Farm Reports &amp; Incidents"
                 android:textColor="#1F2937"
-                android:textSize="26sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
-                android:layout_marginTop="28dp"/>
+                android:layout_marginTop="8dp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="Manage and monitor your Farm Employees."
+                android:layout_marginTop="4dp"
+                android:text="Overview of low stock alerts, field incidents, and worker reports."
                 android:textColor="#6B7280"
-                android:textSize="15sp" />
+                android:textSize="14sp" />
 
+            <!-- STAT CARDS ROW 1: LOW STOCK & INCIDENTS -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="16dp"
                 android:orientation="horizontal">
 
-                <!-- TASKS -->
+                <!-- LOW STOCK ALERT CARD -->
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardLowStockAlerts"
                     android:layout_width="0dp"
                     android:layout_height="110dp"
                     android:layout_marginEnd="8dp"
@@ -89,8 +88,8 @@
                     app:cardBackgroundColor="@android:color/white"
                     app:cardCornerRadius="14dp"
                     app:cardElevation="2dp"
-                    app:strokeColor="#E5E7EB"
-                    app:strokeWidth="1dp">
+                    app:strokeColor="#FEE2E2"
+                    app:strokeWidth="1.5dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -99,26 +98,30 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/textLowStockCount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="12"
-                            android:textColor="#1A8A29"
-                            android:textSize="30sp"
+                            android:text="⚠️ 3"
+                            android:textColor="#DC2626"
+                            android:textSize="28sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Ongoing"
-                            android:textColor="#6B7280"
-                            android:textSize="14sp" />
+                            android:layout_marginTop="2dp"
+                            android:text="Low Stock Alerts"
+                            android:textColor="#991B1B"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- REQUESTS -->
+                <!-- INCIDENT REPORTS CARD -->
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardIncidentReports"
                     android:layout_width="0dp"
                     android:layout_height="110dp"
                     android:layout_marginStart="8dp"
@@ -126,8 +129,8 @@
                     app:cardBackgroundColor="@android:color/white"
                     app:cardCornerRadius="14dp"
                     app:cardElevation="2dp"
-                    app:strokeColor="#E5E7EB"
-                    app:strokeWidth="1dp">
+                    app:strokeColor="#FEF3C7"
+                    app:strokeWidth="1.5dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -136,92 +139,74 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/textIncidentsCount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="10"
-                            android:textColor="#1A8A29"
-                            android:textSize="30sp"
+                            android:text="🚨 2"
+                            android:textColor="#D97706"
+                            android:textSize="28sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Done"
-                            android:textColor="#6B7280"
-                            android:textSize="14sp" />
+                            android:layout_marginTop="2dp"
+                            android:text="Field Incidents"
+                            android:textColor="#92400E"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
                 </com.google.android.material.card.MaterialCardView>
-            </LinearLayout>
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="40sp">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/searchEmployeeLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginEnd="2dp"
-                    android:layout_marginTop="16dp"
-                    android:hint="Search Reports"
-                    app:boxBackgroundMode="filled"
-                    app:boxBackgroundColor="@android:color/white"
-                    app:boxCornerRadiusTopStart="12dp"
-                    app:boxCornerRadiusTopEnd="12dp"
-                    app:boxCornerRadiusBottomStart="12dp"
-                    app:boxCornerRadiusBottomEnd="12dp"
-                    app:startIconDrawable="@drawable/outline_data_loss_prevention_24">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etSearchEmployee"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="text"
-                        android:singleLine="true"
-                        android:imeOptions="actionSearch" />
-
-                </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
-            <LinearLayout
+
+            <!-- SEARCH BAR -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/searchEmployeeLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="2dp"
-                android:layout_marginEnd="1dp"
                 android:layout_marginTop="20dp"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
-                <TextView
-                    android:layout_width="0dp"
+                android:hint="Search reports, alerts, or workers..."
+                app:boxBackgroundMode="filled"
+                app:boxBackgroundColor="@android:color/white"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:startIconDrawable="@drawable/outline_data_loss_prevention_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etSearchEmployee"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Reports"
-                    android:textColor="#1F2937"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:imeOptions="actionSearch" />
 
+            </com.google.android.material.textfield.TextInputLayout>
 
+            <!-- SECTION 1: LOW STOCK ALERTS -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="⚠️ Low Stock Reports"
+                android:textColor="#991B1B"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-
-
-
-
-            </LinearLayout>
-
+            <!-- LOW STOCK ITEM 1 -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="10dp"
                 app:cardBackgroundColor="@android:color/white"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="2dp">
+                app:cardElevation="2dp"
+                app:strokeColor="#FCA5A5"
+                app:strokeWidth="1dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -238,17 +223,17 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text=" 👤  Eric choa"
+                            android:text="Urea Fertilizer 46-0-0"
                             android:textColor="#1F2937"
-                            android:textSize="17sp"
+                            android:textSize="16sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Ongoing"
-                            android:textColor="#F59E0B"
-                            android:textSize="14sp"
+                            android:text="CRITICAL LOW"
+                            android:textColor="#DC2626"
+                            android:textSize="12sp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -256,26 +241,245 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="Farmer01 "
-                        android:textColor="#6B7280"
-                        android:textSize="14sp" />
+                        android:layout_marginTop="4dp"
+                        android:text="Remaining: 2.0 kg  •  Reorder Level: 10.0 kg"
+                        android:textColor="#4B5563"
+                        android:textSize="13sp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:text="🌱     Crop Area A   "
-                        android:textColor="#6B7280"
-                        android:textSize="14sp" />
+                        android:layout_marginTop="4dp"
+                        android:text="Supplier: AgriSupplies Inc.  •  📅 Feb 23, 2025"
+                        android:textColor="#9CA3AF"
+                        android:textSize="12sp" />
 
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- LOW STOCK ITEM 2 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#FDE68A"
+                app:strokeWidth="1dp">
 
-            <!-- REQUEST 2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Pesticide Alpha Spray"
+                            android:textColor="#1F2937"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="REORDER SOON"
+                            android:textColor="#D97706"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Remaining: 1.5 Liters  •  Reorder Level: 5.0 Liters"
+                        android:textColor="#4B5563"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Supplier: GreenCrop Ltd.  •  📅 Feb 22, 2025"
+                        android:textColor="#9CA3AF"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- SECTION 2: FIELD INCIDENT REPORTS -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="🚨 Field &amp; Farm Incident Reports"
+                android:textColor="#92400E"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- INCIDENT 1 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#FDE68A"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="🚨 Broken Irrigation Water Pipe"
+                            android:textColor="#1F2937"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="URGENT"
+                            android:textColor="#DC2626"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Reported by: Juan Dela Cruz  •  Location: Crop Area B"
+                        android:textColor="#4B5563"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Details: Main pipeline leaking water into field 2. Plumber needed."
+                        android:textColor="#374151"
+                        android:textSize="13sp"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="📅 Feb 23, 2025 • 09:15 AM"
+                        android:textColor="#9CA3AF"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- INCIDENT 2 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#E5E7EB"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="🐛 Insect Pest Outbreak Detected"
+                            android:textColor="#1F2937"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="INVESTIGATING"
+                            android:textColor="#D97706"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Reported by: Pedro Santos  •  Location: Corn Field Area 3"
+                        android:textColor="#4B5563"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Details: Armyworms spotted on leaves. Pesticide spray required."
+                        android:textColor="#374151"
+                        android:textSize="13sp"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="📅 Feb 22, 2025 • 03:40 PM"
+                        android:textColor="#9CA3AF"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- SECTION 3: WORKER ACTIVITY REPORTS -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="📋 Worker Activity Reports"
+                android:textColor="#1F2937"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- ACTIVITY REPORT 1 -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -299,17 +503,17 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="👤  Rimuru Tempest"
+                            android:text="👤 Eric Naatchal"
                             android:textColor="#1F2937"
-                            android:textSize="17sp"
+                            android:textSize="16sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Finish"
+                            android:text="COMPLETED"
                             android:textColor="#1A8A29"
-                            android:textSize="14sp"
+                            android:textSize="12sp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -317,157 +521,30 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="Demon Lord"
-                        android:textColor="#6B7280"
-                        android:textSize="14sp" />
+                        android:layout_marginTop="4dp"
+                        android:text="Activity: Fertilizer Application  •  Location: Crop Area A"
+                        android:textColor="#4B5563"
+                        android:textSize="13sp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:text="Crop Area B"
-                        android:textColor="#6B7280"
-                        android:textSize="14sp" />
+                        android:layout_marginTop="4dp"
+                        android:text="📅 Feb 23, 2025 • 11:00 AM"
+                        android:textColor="#9CA3AF"
+                        android:textSize="12sp" />
 
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                app:cardBackgroundColor="@android:color/white"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="👤    Eric Naatchal"
-                            android:textColor="#1F2937"
-                            android:textSize="17sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Ongoing"
-                            android:textColor="#F59E0B"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="Poultry  "
-                        android:textColor="#6B7280"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:text="Poultry Area"
-                        android:textColor="#6B7280"
-                        android:textSize="14sp" />
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-
-            <!-- REQUEST 2 -->
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:cardBackgroundColor="@android:color/white"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="👤  Jun jun"
-                            android:textColor="#1F2937"
-                            android:textSize="17sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Finish"
-                            android:textColor="#1A8A29"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="Farmer"
-                        android:textColor="#6B7280"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:text="Crop Set AB"
-                        android:textColor="#6B7280"
-                        android:textSize="14sp" />
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-
-            <!-- BOTTOM SPACE -->
-
+            <!-- BOTTOM SPACING -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="30dp" />
 
-
-
         </LinearLayout>
 
-
-
     </ScrollView>
-
 
 </LinearLayout>
